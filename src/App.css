@@ -1,0 +1,22 @@
+.main-bg {
+  height: 500px;
+  background-image: url('./img/shoes1.jpg');
+  background-size: cover;
+  background-position: center;
+  width: 1000px;
+  margin: 0 330px;
+}
+
+/* ProductList */
+
+.shose-list {
+  width: 200px;
+}
+
+.start {
+  opacity: 0;
+}
+.end {
+  opacity: 1;
+  transition: opacity 0.5s;
+}
