@@ -5,6 +5,7 @@ import { addCart } from './store';
 import { useDispatch } from 'react-redux/es/exports';
 import { useLocation } from 'react-router';
 import ProductList from './ProductList';
+import { useNavigate } from 'react-router-dom';
 
 function DetailPage() {
   const { state } = useLocation();
@@ -14,8 +15,8 @@ function DetailPage() {
   const [items, setItems] = useState();
   console.log(state);
 
-  const [size, setSize] = useState('');
-  const [color, setColor] = useState('');
+  const [size, setSize] = useState(230);
+  const [color, setColor] = useState('black');
 
   console.log(size, color);
   // let [visible, setVisible] = useState(true);
@@ -64,6 +65,26 @@ function DetailPage() {
     setDetail(cpDetail);
     console.log(detail);
   };
+
+  const navigate = useNavigate();
+
+  const useConfirm = (message = null, onConfirm, onCancel) => {
+    const confirmAction = () => {
+      if (window.confirm(message)) {
+        onConfirm();
+      } else {
+        onCancel();
+      }
+    };
+    return confirmAction;
+  };
+
+  const onComfirm = useConfirm(
+    '장바구니로 이동하시겠습니까?',
+    () => navigate('/cart'),
+    () => console.log('쇼핑 계속...')
+  );
+
   return (
     <div>
       <div className='container'>
@@ -123,6 +144,7 @@ function DetailPage() {
                     count: 1,
                   })
                 );
+                onComfirm();
               }}
             >
               주문하기
