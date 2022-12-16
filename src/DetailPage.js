@@ -142,6 +142,7 @@ function DetailPage() {
                     size: size,
                     color: color,
                     count: 1,
+                    price: state.price,
                   })
                 );
                 onComfirm();

@@ -8,6 +8,7 @@ let cart = createSlice({
   ],
   reducers: {
     addCount(state, actions) {
+      console.log(state);
       state[actions.payload].count += 1;
     },
     addCart(state, actions) {
