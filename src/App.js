@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import Navlist from './Navlist';
 import { Route, Routes } from 'react-router-dom';
-import DetailPage from './DetailPage';
+import DetailPage from './DetailPage/DetailPage';
 import Event from './EventPage/Event';
 import Cart from './Cart.js';
 import MainPage from './MainPage';

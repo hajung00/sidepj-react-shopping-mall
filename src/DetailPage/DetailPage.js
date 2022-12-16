@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import './App.css';
+import '../App.css';
 import { Nav } from 'react-bootstrap';
-import { addCart } from './store';
+import { addCart } from '../store';
 import { useDispatch } from 'react-redux/es/exports';
 import { useLocation } from 'react-router';
-import ProductList from './ProductList';
+import ProductList from '../ProductList';
 import { useNavigate } from 'react-router-dom';
+import DetailComponent from './DetailComponent';
 
 function DetailPage() {
   const { state } = useLocation();
@@ -183,7 +184,7 @@ function DetailPage() {
                   change(0);
                 }}
               >
-                버튼0
+                DETAIL
               </Nav.Link>
             </Nav.Item>
             <Nav.Item>
@@ -193,7 +194,7 @@ function DetailPage() {
                   change(1);
                 }}
               >
-                버튼1
+                REVIEW
               </Nav.Link>
             </Nav.Item>
             <Nav.Item>
@@ -203,14 +204,14 @@ function DetailPage() {
                   change(2);
                 }}
               >
-                버튼2
+                QnA
               </Nav.Link>
             </Nav.Item>
           </Nav>
           {detail.map((a, i) => {
             return (
               <div className={'start ' + animation}>
-                {detail[i] != 0 ? <div>내용{i}</div> : null}
+                {detail[i] != 0 ? <DetailComponent i={i} /> : null}
               </div>
             );
           })}

@@ -1,12 +1,3 @@
-.main-bg {
-  height: 500px;
-  background-image: url('./img/shoes1.jpg');
-  background-size: cover;
-  background-position: center;
-  width: 1000px;
-  margin: 0 330px;
-}
-
 /* ProductList */
 
 .shose-list {
