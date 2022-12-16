@@ -1,12 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import ProductList from './ProductList';
-import data from './data.js';
 import Button from 'react-bootstrap/Button';
 import axios from 'axios';
+
+// swiper
+import { Swiper, SwiperSlide } from 'swiper/react'; // basic
+import SwiperCore, { Navigation, Pagination } from 'swiper';
+import 'swiper/css'; //basic
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import { useNavigate } from 'react-router-dom';
+
+SwiperCore.use([Navigation, Pagination]);
 
 function MainPage() {
   let [shoes, setShoes] = useState('');
   const [lastId, setLastId] = useState(0);
+
+  const navigation = useNavigate();
 
   useEffect(() => {
     getShoes();
@@ -43,7 +54,33 @@ function MainPage() {
                 {" "}
                 정렬{" "}
               </button> */}
-        <div className='main-bg'></div>
+        <div style={{ padding: '100px 0px' }}>
+          <Swiper
+            slidesPerView={1}
+            spaceBetween={30}
+            mousewheel={true}
+            pagination={{
+              clickable: true,
+            }}
+          >
+            <SwiperSlide style={{ height: '380px' }}>
+              <img
+                src='img/event1.png'
+                onClick={() => {
+                  navigation('/event/one');
+                }}
+              />
+            </SwiperSlide>
+            <SwiperSlide style={{ height: '380px' }}>
+              <img
+                src='img/event2.png'
+                onClick={() => {
+                  navigation('/event/two');
+                }}
+              />
+            </SwiperSlide>
+          </Swiper>
+        </div>
         <div
           style={{
             display: 'grid',

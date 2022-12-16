@@ -138,6 +138,7 @@ function DetailPage() {
                 dispatch(
                   addCart({
                     id: state.id,
+                    src: state.src,
                     title: state.title,
                     size: size,
                     color: color,

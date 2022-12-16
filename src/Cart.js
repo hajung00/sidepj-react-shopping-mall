@@ -1,7 +1,6 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
-
 import { addCount } from './store';
 
 function Cart() {
@@ -9,12 +8,7 @@ function Cart() {
     return state.cart;
   });
   let dispatch = useDispatch();
-  console.log(cartList.length);
-  console.log(cartList);
   const [isCheckingProduct, setIsCheckingProduct] = useState([]);
-
-  // const [isCheckAll, setIsCheckAll] = useState(false);
-  const [checkTrue, setCheckTrue] = useState(true);
 
   useEffect(() => {
     console.log('totalPrice');
@@ -44,9 +38,9 @@ function Cart() {
                   id={i}
                   type={'checkbox'}
                   onClick={(e) => {
+                    // 해당 상품을 체크했을 때, 가격과 인덱스를 isCheckingProduct에 넣어줌
                     console.log(e.currentTarget.checked, i);
                     if (e.currentTarget.checked) {
-                      console.log(isCheckingProduct);
                       setIsCheckingProduct([
                         ...isCheckingProduct,
                         {
@@ -54,19 +48,25 @@ function Cart() {
                           id: i,
                         },
                       ]);
-                      console.log(isCheckingProduct);
-                    } else {
-                      console.log('false', e.currentTarget.checked, i);
-                      console.log(isCheckingProduct);
+                    }
+                    // 해당 상품이 체크되지 않았을 경우, isCheckingProduct에서 해당 인덱스를 제외한다.
+                    else {
                       setIsCheckingProduct(
                         isCheckingProduct.filter((item) => item.id !== i)
                       );
-                      console.log(isCheckingProduct);
                     }
                   }}
                 ></input>
               </td>
-              <td>{cartList[i].title}</td>
+              <td>
+                <div>
+                  <img
+                    src={cartList[i].src}
+                    style={{ width: '100px', height: '100px' }}
+                  />
+                  <p>{cartList[i].title}</p>
+                </div>
+              </td>
               <td>{cartList[i].size}</td>
               <td>{cartList[i].color}</td>
               <td>{cartList[i].count}</td>
@@ -92,7 +92,17 @@ function Cart() {
               .reduce((total, i) => total + i)
           : ''}
       </div>
-      <button>주문하기</button>
+      <button
+        onClick={() => {
+          alert(
+            `총 가격: ${isCheckingProduct
+              .map((item) => item.price)
+              .reduce((total, i) => total + i)} 주문 완료!`
+          );
+        }}
+      >
+        주문하기
+      </button>
     </div>
   );
 }
