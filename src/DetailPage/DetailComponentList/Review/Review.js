@@ -23,7 +23,13 @@ function Review() {
   const reviewData = reviewDummy.reverse();
 
   return (
-    <div style={{ backgroundColor: 'rgb(240, 239, 239)', padding: '10px 0px' }}>
+    <div
+      style={{
+        backgroundColor: 'rgb(240, 239, 239)',
+        padding: '10px 0px',
+        margin: '30px 0px',
+      }}
+    >
       {reviewData.map((review) => (
         <ReviewComponent review={review} key={review.id} />
       ))}

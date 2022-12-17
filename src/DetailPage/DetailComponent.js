@@ -1,6 +1,6 @@
 import React from 'react';
 import Detail from './DetailComponentList/Detail';
-import Qna from './DetailComponentList/Qna';
+import Qna from './DetailComponentList/Qna/Qna';
 import Review from './DetailComponentList/Review/Review';
 function DetailComponent({ i }) {
   switch (i) {
