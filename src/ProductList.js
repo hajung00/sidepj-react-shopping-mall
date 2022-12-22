@@ -5,34 +5,34 @@ import axios from 'axios';
 import './App.css';
 
 // 1. shoes페이지에서 불러오는 경우(shoes) 2. detail페이지의 최근 본 상품에서 불러오는 경우(shoesId)
-const ProductList = ({ shoes, shoesId }) => {
+const ProductList = ({ product, productId }) => {
   let navigate = useNavigate();
-  console.log(shoes, shoesId);
+  console.log(product, productId);
   // shoes페이지에서 불러진 경우 shoes로 초기화, 아닌 경우는 null로 셋팅
-  const [_shoes, setShoes] = useState(shoes ? shoes : null);
+  const [_product, setProduct] = useState(product ? product : null);
 
   // detail페이지에서 불러진 경우 getShoes를 호출해 db.json에서 해당 id의 shoes를 찾아 _shoes에 저장
   useEffect(() => {
-    if (_shoes === null) {
-      getShoes();
+    if (_product === null) {
+      getProduct();
     }
   }, []);
 
   // shoes 가져오기
-  const getShoes = async () => {
-    await axios.get('http://localhost:3000/shoes').then((result) => {
-      console.log(result.data.find((shoes) => shoes.id === shoesId));
-      setShoes(result.data.find((shoes) => shoes.id === shoesId));
+  const getProduct = async () => {
+    await axios.get(`http://localhost:3000/${product}`).then((result) => {
+      console.log(result.data.find((product) => product.id === productId));
+      setProduct(result.data.find((product) => product.id === productId));
     });
   };
-  console.log(_shoes);
+  console.log(_product);
 
   return (
-    <div className={'shose-' + `${shoes ? 'product' : 'list'}`}>
-      {_shoes ? (
+    <div className={'shose-' + `${product ? 'product' : 'list'}`}>
+      {_product ? (
         <div
           onClick={() => {
-            navigate('/detail/' + _shoes.id, { state: _shoes });
+            navigate('/detail/' + _product.id, { state: _product });
           }}
           style={{
             display: 'flex',
@@ -41,9 +41,9 @@ const ProductList = ({ shoes, shoesId }) => {
             alignItems: 'center',
           }}
         >
-          <img src={_shoes.src} width='80%' />
-          <h4>{_shoes.title}</h4>
-          <p>{_shoes.price}</p>
+          <img src={_product.src} width='80%' />
+          <h4>{_product.title}</h4>
+          <p>{_product.price}</p>
         </div>
       ) : (
         <div>로딩중...</div>

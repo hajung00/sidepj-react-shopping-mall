@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import Navlist from './Navlist';
 import { Route, Routes } from 'react-router-dom';
-import DetailPage from './DetailPage/DetailPage';
+import DetailPage from './pages/DetailPage';
 import Event from './EventPage/Event';
-import Cart from './Cart.js';
-import MainPage from './MainPage';
+import Cart from './pages/Cart.js';
+import MainPage from './pages/MainPage';
 import './App.css';
 import Event1 from './EventPage/Event1';
 import Event2 from './EventPage/Event2';
@@ -18,7 +18,7 @@ function App() {
     <div className='App'>
       <Navlist />
       <Routes>
-        <Route path='/shoes' element={<MainPage />}></Route>
+        <Route path='/' element={<MainPage />}></Route>
         <Route path='/detail/:id' element={<DetailPage />}></Route>
         <Route path='/event' element={<Event />}>
           <Route path='one' element={<Event1 />}></Route>

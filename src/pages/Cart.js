@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
-import { addCount } from './store';
+import { addCount } from '../store';
 
 function Cart() {
   let cartList = useSelector((state) => {

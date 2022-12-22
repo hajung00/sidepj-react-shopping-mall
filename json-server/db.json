@@ -2,6 +2,7 @@
   "shoes": [
     {
       "id": 0,
+      "type": "shoes",
       "title": "White and Black",
       "content": "Born in France",
       "price": 120000,
@@ -9,6 +10,7 @@
     },
     {
       "id": 1,
+      "type": "shoes",
       "title": "Red Knit",
       "content": " Born in Seoul",
       "price": 110000,
@@ -17,6 +19,7 @@
 
     {
       "id": 2,
+      "type": "shoes",
       "title": "Grey Yordan",
       "content": "Born in the States",
       "price": 130000,
@@ -24,6 +27,7 @@
     },
     {
       "id": 3,
+      "type": "shoes",
       "title": "Flowey",
       "content": "only 5 inches",
       "price": 120000,
@@ -32,6 +36,7 @@
 
     {
       "id": 4,
+      "type": "shoes",
       "title": "Baby shoes",
       "content": "for less than 6",
       "price": 120000,
@@ -40,6 +45,7 @@
 
     {
       "id": 5,
+      "type": "shoes",
       "title": "Red Herring",
       "content": "Born in France",
       "price": 120000,
@@ -47,6 +53,7 @@
     },
     {
       "id": 6,
+      "type": "shoes",
       "title": "Sijang",
       "content": "from Dongmyo station",
       "price": 120000,
@@ -54,6 +61,7 @@
     },
     {
       "id": 7,
+      "type": "shoes",
       "title": "Tag gari",
       "content": "ali and taobao",
       "price": 120000,
@@ -61,10 +69,65 @@
     },
     {
       "id": 8,
+      "type": "shoes",
       "title": "Flyer",
       "content": "Refund not available",
       "price": 120000,
       "src": "https://codingapple1.github.io/shop/shoes7.jpg"
+    }
+  ],
+
+  "top": [
+    {
+      "id": 0,
+      "type": "top",
+      "title": "OVERSIZE CELINE SWEATER",
+      "content": "Born in France",
+      "price": 102000,
+      "src": "https://twicpics.celine.com/product-prd/images/large/2A19R423P.38NO_1_SUM22_V9.jpg?twic=v1/cover=1:1/resize-max=480"
+    },
+    {
+      "id": 1,
+      "type": "top",
+      "title": "Beige shirt",
+      "content": " Born in Seoul",
+      "price": 110000,
+      "src": "https://eomisae.co.kr/files/attach/images/33051459/086/586/034/1ae16263f388e189d4a850c609e06c32.jpeg"
+    },
+
+    {
+      "id": 2,
+      "type": "top",
+      "title": "Blue sky shirt",
+      "content": "Born in the States",
+      "price": 110000,
+      "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFPhR8Cd_I1OzNlBFw-IgizbcdXZINPH-WQ2ZgjNkVex5WFULqOBF_2qepnEAVOi8Tl80&usqp=CAU"
+    },
+    {
+      "id": 3,
+      "type": "top",
+      "title": "Black shirt",
+      "content": "only 5 inches",
+      "price": 110000,
+      "src": "https://lp.cosstores.com/app001prod?set=source[02_0807101_001_2],type[PRODUCT],device[hdpi],quality[80],ImageVersion[201909231505]&call=url[file:/product/main]"
+    },
+
+    {
+      "id": 4,
+      "type": "top",
+      "title": "green shirt",
+      "content": "for less than 6",
+      "price": 320000,
+      "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSE8MdRcrJjOWRP1WI-aZaXae-CUEXTDL4tTN54XeaZGDkr9QUo6ZtoDaCqmM21O7Fk0RU&usqp=CAU"
+    },
+
+    {
+      "id": 5,
+      "type": "top",
+      "title": "Angel Crop top",
+      "content": "Born in France",
+      "price": 220000,
+      "src": "https://wiisnt.co.kr/web/product/extra/big/20220919/7dac672c291307ca402b7a21fa00327e.jpg"
     }
   ]
 }

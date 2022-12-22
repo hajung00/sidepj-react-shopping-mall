@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux/es/exports';
 import { useLocation } from 'react-router';
 import ProductList from '../ProductList';
 import { useNavigate } from 'react-router-dom';
-import DetailComponent from './DetailComponent';
+import DetailComponent from '../DetailPage/DetailComponent';
 
 function DetailPage() {
   const { state } = useLocation();
@@ -39,7 +39,7 @@ function DetailPage() {
     let item = localStorage.getItem('watched');
     console.log(item);
     item = JSON.parse(item);
-    item.push(state.id);
+    item.push(state.id, state.type);
     console.log(item);
     //Set으로 바꿨다가 다시 array로 만들기
     item = new Set(item);

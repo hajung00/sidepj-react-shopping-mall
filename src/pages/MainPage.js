@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import ProductList from './ProductList';
+import ProductList from '../ProductList';
 import Button from 'react-bootstrap/Button';
 import axios from 'axios';
 
@@ -14,20 +14,26 @@ import { useNavigate } from 'react-router-dom';
 SwiperCore.use([Navigation, Pagination]);
 
 function MainPage() {
-  let [shoes, setShoes] = useState('');
+  let [product, setProduct] = useState('');
+
+  const [top, setTop] = useState('');
   const [lastId, setLastId] = useState(0);
+
+  const [type, setType] = useState('top');
 
   const navigation = useNavigate();
 
   useEffect(() => {
-    getShoes();
-  }, []);
+    getProduct();
+
+    console.log(product);
+  }, [type]);
 
   // shoes 3개씩 가져오기
-  const getShoes = async () => {
-    await axios.get('http://localhost:3000/shoes').then((result) => {
+  const getProduct = async () => {
+    await axios.get(`http://localhost:3000/${type}`).then((result) => {
       console.log(result.data.slice(lastId, lastId + 3));
-      setShoes([...shoes, ...result.data.slice(lastId, lastId + 3)]);
+      setProduct([...product, ...result.data.slice(lastId, lastId + 3)]);
     });
     setLastId(lastId + 3);
     console.log(lastId);
@@ -81,6 +87,27 @@ function MainPage() {
             </SwiperSlide>
           </Swiper>
         </div>
+        <div>
+          <span
+            onClick={() => {
+              setType('top');
+              setProduct('');
+              setLastId(0);
+            }}
+          >
+            top
+          </span>
+
+          <span
+            onClick={() => {
+              setType('shoes');
+              setProduct('');
+              setLastId(0);
+            }}
+          >
+            shoes
+          </span>
+        </div>
         <div
           style={{
             display: 'grid',
@@ -88,11 +115,11 @@ function MainPage() {
             gap: '2%',
           }}
         >
-          {shoes ? (
-            shoes.map((a) => {
+          {product ? (
+            product.map((a) => {
               return (
                 <div style={{ width: '100%' }}>
-                  <ProductList shoes={a} key={a.id} />
+                  <ProductList product={a} key={a.id} />
                 </div>
               );
             })
@@ -100,7 +127,7 @@ function MainPage() {
             <div>로딩중...</div>
           )}{' '}
         </div>
-        <Button variant='primary' onClick={getShoes}>
+        <Button variant='primary' onClick={getProduct}>
           더보기
         </Button>{' '}
       </>
