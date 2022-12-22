@@ -37,14 +37,28 @@ function DetailPage() {
   //최근 본 상품 list
   useEffect(() => {
     let item = localStorage.getItem('watched');
-    console.log(item);
+    let count = 0;
     item = JSON.parse(item);
-    item.push({ id: state.id, type: state.type });
-    console.log(item);
-    //Set으로 바꿨다가 다시 array로 만들기
-    item = new Set(item);
+    // watch가 비었을 때(맨처음) 그냥 넣어줌
+    if (item.length === 0) {
+      console.log('first');
+      item.push({ id: state.id, type: state.type });
+    }
+    // watct에 값이 있을 경우 id랑 type이 같은게 하나도 없으면 push (count로 같은 경우 세어줌)
+    else {
+      for (let i = 0; i < item.length; i++) {
+        if (item[i].id === state.id && item[i].type === state.type) {
+          count += 1;
+        }
+      }
+      if (count === 0) {
+        item.push({ id: state.id, type: state.type });
+      }
+    }
+
+    //item.push({ id: state.id, type: state.type });
     item = Array.from(item);
-    console.log(item);
+    console.log('45', item);
     setItems(item);
     localStorage.setItem('watched', JSON.stringify(item));
   }, []);
