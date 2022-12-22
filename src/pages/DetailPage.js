@@ -39,11 +39,12 @@ function DetailPage() {
     let item = localStorage.getItem('watched');
     console.log(item);
     item = JSON.parse(item);
-    item.push(state.id, state.type);
+    item.push({ id: state.id, type: state.type });
     console.log(item);
     //Set으로 바꿨다가 다시 array로 만들기
     item = new Set(item);
     item = Array.from(item);
+    console.log(item);
     setItems(item);
     localStorage.setItem('watched', JSON.stringify(item));
   }, []);
@@ -167,7 +168,7 @@ function DetailPage() {
               items.map((item) => {
                 return (
                   <div>
-                    <ProductList shoesId={item} />
+                    <ProductList productId={item} />
                   </div>
                 );
               })

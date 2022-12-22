@@ -20,10 +20,23 @@ const ProductList = ({ product, productId }) => {
 
   // shoes 가져오기
   const getProduct = async () => {
-    await axios.get(`http://localhost:3000/${product}`).then((result) => {
-      console.log(result.data.find((product) => product.id === productId));
-      setProduct(result.data.find((product) => product.id === productId));
-    });
+    console.log('getProduct');
+    await axios
+      .get(`http://localhost:3000/${productId.type}`)
+      .then((result) => {
+        console.log(
+          result.data.find(
+            (product) =>
+              product.id === productId.id && product.type === productId.type
+          )
+        );
+        setProduct(
+          result.data.find(
+            (product) =>
+              product.id === productId.id && product.type === productId.type
+          )
+        );
+      });
   };
   console.log(_product);
 
