@@ -182,5 +182,164 @@
       "price": 520000,
       "src": "https://image.msscdn.net/images/goods_img/20210930/2154679/2154679_2_500.jpg?t=20211124104211"
     }
+  ],
+  "bottom": [
+    {
+      "id": 0,
+      "type": "bottom",
+      "title": "embroidered track pants",
+      "content": "Born in France",
+      "price": 112000,
+      "src": "https://twicpics.celine.com/product-prd/images/large/2Z062670Q.09GB_1_WIN21_V9.jpg?twic=v1/cover=1:1/resize-max=480"
+    },
+    {
+      "id": 1,
+      "type": "bottom",
+      "title": "Pintuck stripe back banding flared skirt",
+      "content": " Born in Seoul",
+      "price": 310000,
+      "src": "https://atimg.sonyunara.com/files/attrangs/goods/143813/63490eb9a7bcf.jpg"
+    },
+
+    {
+      "id": 2,
+      "type": "bottom",
+      "title": "high waisted wide leg",
+      "content": "Born in the States",
+      "price": 220000,
+      "src": "https://image.thehyundai.com/static/4/7/5/58/A1/hnm40A1585747_02_1091407_001_001_1600.jpg"
+    },
+    {
+      "id": 3,
+      "type": "bottom",
+      "title": "authentic chino loose trousers",
+      "content": "only 5 inches",
+      "price": 710000,
+      "src": "https://image.vans.co.kr/cmsstatic/product/VN0A5FJBBLK1_VN0A5FJBBLK1_primary.jpg?gallery"
+    },
+
+    {
+      "id": 4,
+      "type": "bottom",
+      "title": "pleated basic skirt",
+      "content": "for less than 6",
+      "price": 320000,
+      "src": "https://cdn.wizwid.com/PImg/707889/bsc/707889076.jpg?w=600&h=800"
+    },
+
+    {
+      "id": 5,
+      "type": "bottom",
+      "title": "Back Logo Patch Wide Denim Pants",
+      "content": "Born in France",
+      "price": 520000,
+      "src": "https://cdn.jentestore.io/resource/products/767734/767734_1.jpg?_=35675776"
+    }
+  ],
+  "ops": [
+    {
+      "id": 0,
+      "type": "ops",
+      "title": "Cotton poplin long derss",
+      "content": "Born in France",
+      "price": 112000,
+      "src": "https://media.gucci.com/style/White_Center_0_0_250x170/1652981481/691657_Z8A0D_1902_001_100_0000_Light-.jpg"
+    },
+    {
+      "id": 1,
+      "type": "ops",
+      "title": "One Piece M223CO3860G",
+      "content": " Born in Seoul",
+      "price": 310000,
+      "src": "https://metrocityworld.com/web/product/big/202209/8368b22958dac9862a62673f7052772d.jpg"
+    },
+
+    {
+      "id": 2,
+      "type": "ops",
+      "title": "Triangle logo nylon belt flare dress",
+      "content": "Born in the States",
+      "price": 220000,
+      "src": "https://cdn.jentestore.io/resource/products/556170/556170_1.jpg?_=29324270"
+    },
+    {
+      "id": 3,
+      "type": "ops",
+      "title": "slim fit scuba dress",
+      "content": "only 5 inches",
+      "price": 710000,
+      "src": "https://image.thehyundai.com/static/5/1/8/57/A1/hnm40A1578156_02_1107925_001_001_1600.jpg"
+    },
+
+    {
+      "id": 4,
+      "type": "ops",
+      "title": "GG button wool dress",
+      "content": "for less than 6",
+      "price": 320000,
+      "src": "https://media.gucci.com/style/White_Center_0_0_250x170/1655483442/691489_ZJW57_1000_001_100_0000_Light-GG.jpg"
+    },
+
+    {
+      "id": 5,
+      "type": "ops",
+      "title": "Romantic Off Shoulder Flare Long Dress",
+      "content": "Born in France",
+      "price": 520000,
+      "src": "https://atimg.sonyunara.com/files/attrangs/goods/140306/6316e54e95264.jpg"
+    }
+  ],
+  "bag": [
+    {
+      "id": 0,
+      "type": "bag",
+      "title": "moon necklace",
+      "content": "Born in France",
+      "price": 112000,
+      "src": "https://maadtr3966.cdn-nhncommerce.com/data/goods/16/03/29/1000001270/1000001270_detail_013.jpg"
+    },
+    {
+      "id": 1,
+      "type": "bag",
+      "title": "Triomphe Articulated Bracelet",
+      "content": " Born in Seoul",
+      "price": 310000,
+      "src": "https://twicpics.celine.com/product-prd/images/large/46Z676BRA.35OR_1_SUM22_V2.jpg?twic=v1/cover=1:1/resize-max=480"
+    },
+
+    {
+      "id": 2,
+      "type": "bag",
+      "title": "ELAN UNITY NECKLACE",
+      "content": "Born in the States",
+      "price": 220000,
+      "src": "https://www.danielwellington.com/product-images/dw00400166_elan_unit-ZPwNMg9v.png?ecom2=true&format=jpg&canvas=1:1&width=600&quality=80&bg-color=FFFFFF"
+    },
+    {
+      "id": 3,
+      "type": "bag",
+      "title": "CELINE Mini Vertical Cabas",
+      "content": "only 5 inches",
+      "price": 710000,
+      "src": "https://twicpics.celine.com/product-prd/images/large/193302BNZ.02NT_1_FALL20_723653v1.jpg?twic=v1/cover=1:1/resize-max=480"
+    },
+
+    {
+      "id": 4,
+      "type": "bag",
+      "title": "covernat",
+      "content": "for less than 6",
+      "price": 320000,
+      "src": "https://www.covernat.net/web/product/medium/202210/9acb7a60de5dbd9696fb9f128cf66508.jpg"
+    },
+
+    {
+      "id": 5,
+      "type": "bag",
+      "title": "baroque triomphe earrings",
+      "content": "Born in France",
+      "price": 520000,
+      "src": "https://twicpics.celine.com/product-prd/images/large/46W356BPA.01GI_1_SPR21_970345v2.jpg?twic=v1/cover=1:1/resize-max=480"
+    }
   ]
 }

@@ -40,9 +40,7 @@ function MainPage() {
   };
 
   const onClickHandler = (name) => {
-    console.log(name);
     setType(name);
-    console.log(type);
     setProduct('');
     setLastId(0);
   };
@@ -115,6 +113,27 @@ function MainPage() {
             }}
           >
             outer
+          </span>
+          <span
+            onClick={() => {
+              onClickHandler('bottom');
+            }}
+          >
+            bottom
+          </span>
+          <span
+            onClick={() => {
+              onClickHandler('ops');
+            }}
+          >
+            ops
+          </span>
+          <span
+            onClick={() => {
+              onClickHandler('bag');
+            }}
+          >
+            acc/bag
           </span>
         </div>
         <div
