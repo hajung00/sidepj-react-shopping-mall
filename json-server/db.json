@@ -129,5 +129,58 @@
       "price": 220000,
       "src": "https://wiisnt.co.kr/web/product/extra/big/20220919/7dac672c291307ca402b7a21fa00327e.jpg"
     }
+  ],
+  "outer": [
+    {
+      "id": 0,
+      "type": "outer",
+      "title": "Oversized teddy jacket",
+      "content": "Born in France",
+      "price": 1102000,
+      "src": "https://twicpics.celine.com/product-prd/images/large/2V56D896C.38NO_1_SUM22_v8.jpg?twic=v1/cover=1:1/resize-max=480"
+    },
+    {
+      "id": 1,
+      "type": "outer",
+      "title": "Wool Cashmere Blend Fleece Jacket",
+      "content": " Born in Seoul",
+      "price": 310000,
+      "src": "https://assets.burberry.com/is/image/Burberryltd/1996AEB6-E85D-43EB-9E68-5911F5D23E33?$BBY_V2_SL_1x1$&wid=1251&hei=1251"
+    },
+
+    {
+      "id": 2,
+      "type": "outer",
+      "title": "Leather jacket",
+      "content": "Born in the States",
+      "price": 220000,
+      "src": "https://m.fallett.co.kr/web/product/medium/202201/ff7d5960ac066b01784b3b31875c5ad8.jpg"
+    },
+    {
+      "id": 3,
+      "type": "outer",
+      "title": "Blue jacket",
+      "content": "only 5 inches",
+      "price": 710000,
+      "src": "https://m.thetrillion.co.kr/web/product/medium/202204/4e172029bf64b3d16162222969f60459.jpg"
+    },
+
+    {
+      "id": 4,
+      "type": "outer",
+      "title": "gray zip up",
+      "content": "for less than 6",
+      "price": 320000,
+      "src": "https://cafe24img.poxo.com/solidonlinestore/web/product/big/202202/ecfdd6bfad850ebb8d4c3c9594145376.jpg"
+    },
+
+    {
+      "id": 5,
+      "type": "outer",
+      "title": "Urban short padding",
+      "content": "Born in France",
+      "price": 520000,
+      "src": "https://image.msscdn.net/images/goods_img/20210930/2154679/2154679_2_500.jpg?t=20211124104211"
+    }
   ]
 }

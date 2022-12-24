@@ -39,6 +39,13 @@ function MainPage() {
     console.log(lastId);
   };
 
+  const onClickHandler = (name) => {
+    console.log(name);
+    setType(name);
+    console.log(type);
+    setProduct('');
+    setLastId(0);
+  };
   return (
     <div>
       <>
@@ -90,22 +97,24 @@ function MainPage() {
         <div>
           <span
             onClick={() => {
-              setType('top');
-              setProduct('');
-              setLastId(0);
+              onClickHandler('top');
             }}
           >
             top
           </span>
-
           <span
             onClick={() => {
-              setType('shoes');
-              setProduct('');
-              setLastId(0);
+              onClickHandler('shoes');
             }}
           >
             shoes
+          </span>
+          <span
+            onClick={() => {
+              onClickHandler('outer');
+            }}
+          >
+            outer
           </span>
         </div>
         <div
