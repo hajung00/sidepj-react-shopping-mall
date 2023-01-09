@@ -40,10 +40,14 @@ const Navlist = () => {
             <SearchOutlined />
           </span>
         </div>
-        <div className='nav-cart'>
-          <p>Cart</p>
-          <ShoppingOutlined />
-        </div>
+        <ul className='nav-my'>
+          <li>LOGIN</li>
+          <li>JOIN</li>
+          <li>MY PAGE</li>
+          <li>
+            <ShoppingOutlined />
+          </li>
+        </ul>
       </div>
     </nav>
   );

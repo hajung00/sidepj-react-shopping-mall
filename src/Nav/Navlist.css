@@ -2,14 +2,14 @@
   box-sizing: border-box;
 }
 .nav-wrapper {
-  width: 80%;
+  width: 68%;
   height: 50px;
   margin: 0 auto;
   z-index: 10000;
   position: absolute;
-  left: calc(100% - 80%);
+  left: calc(100% - 60%);
   top: 0;
-  transform: translateX(-150px);
+  transform: translateX(-290px);
   border-radius: 3px;
 }
 .nav-item {
@@ -17,30 +17,30 @@
   height: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  background-color: rgba(250, 250, 250, 0.3);
+  background-color: rgba(250, 250, 250, 0);
   margin: 20px 0;
 }
 .nav-logo {
   padding-top: 12px;
-  font-family: 'Do Hyeon', sans-serif;
+  padding-left: 7px;
   font-size: 22px;
-  font-weight: 300;
+  font-weight: 500;
 }
 .nav-input {
   overflow: hidden;
-
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   border: 1px solid black;
   border-radius: 10px;
+  margin-right: 80px;
 }
 .nav-input input {
   width: 300px;
-  height: 33px;
+  height: 29px;
   border: none;
   background-color: rgba(250, 250, 250, 0.3);
 }
@@ -52,14 +52,19 @@
   background-color: rgba(250, 250, 250, 0.3);
 }
 
-.nav-cart {
+.nav-my {
   display: flex;
   padding-top: 13px;
+  padding-right: 7px;
+  list-style: none;
+  font-size: 13px;
+  padding-right: 5px;
 }
-.nav-cart p {
-  font-family: 'Do Hyeon', sans-serif;
-  font-size: 18px;
+.nav-my li {
+  padding-right: 20px;
 }
-.nav-cart span {
-  padding: 3px 5px;
+.nav-my li:nth-child(-n + 3):after {
+  display: inline;
+  content: '|';
+  padding-left: 20px;
 }
