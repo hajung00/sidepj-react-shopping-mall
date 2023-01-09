@@ -45,120 +45,100 @@ function MainPage() {
     setLastId(0);
   };
   return (
-    <div>
-      <>
-        {/* 상품 title 정렬
-              <button
-                onClick={() => {
-                  let copy = [...shoes];
-                  copy.sort(function (a, b) {
-                    if (a["title"] > b["title"]) {
-                      return 1;
-                    } else if (a["title"] < b["title"]) {
-                      return -1;
-                    }
-                  });
-                  setShoes(copy);
-                  console.log(shoes);
-                }}
-              >
-                {" "}
-                정렬{" "}
-              </button> */}
-        <div style={{ padding: '100px 0px' }}>
-          <Swiper
-            slidesPerView={1}
-            spaceBetween={30}
-            mousewheel={true}
-            pagination={{
-              clickable: true,
-            }}
-          >
-            <SwiperSlide style={{ height: '380px' }}>
-              <img
-                src='img/event1.png'
-                onClick={() => {
-                  navigation('/event/one');
-                }}
-              />
-            </SwiperSlide>
-            <SwiperSlide style={{ height: '380px' }}>
-              <img
-                src='img/event2.png'
-                onClick={() => {
-                  navigation('/event/two');
-                }}
-              />
-            </SwiperSlide>
-          </Swiper>
-        </div>
-        <div>
-          <span
-            onClick={() => {
-              onClickHandler('top');
-            }}
-          >
-            top
-          </span>
-          <span
-            onClick={() => {
-              onClickHandler('shoes');
-            }}
-          >
-            shoes
-          </span>
-          <span
-            onClick={() => {
-              onClickHandler('outer');
-            }}
-          >
-            outer
-          </span>
-          <span
-            onClick={() => {
-              onClickHandler('bottom');
-            }}
-          >
-            bottom
-          </span>
-          <span
-            onClick={() => {
-              onClickHandler('ops');
-            }}
-          >
-            ops
-          </span>
-          <span
-            onClick={() => {
-              onClickHandler('bag');
-            }}
-          >
-            acc/bag
-          </span>
-        </div>
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(3, auto)',
-            gap: '2%',
+    <div className='main-wrapper'>
+      <div className='main-banner'>
+        <Swiper
+          slidesPerView={1}
+          spaceBetween={30}
+          mousewheel={true}
+          pagination={{
+            clickable: true,
           }}
         >
-          {product ? (
-            product.map((a) => {
-              return (
-                <div style={{ width: '100%' }}>
-                  <ProductList product={a} key={a.id} />
-                </div>
-              );
-            })
-          ) : (
-            <div>로딩중...</div>
-          )}{' '}
-        </div>
-        <Button variant='primary' onClick={getProduct}>
-          더보기
-        </Button>{' '}
-      </>
+          <SwiperSlide>
+            <img
+              src='img/banner1.png'
+              onClick={() => {
+                navigation('/event/one');
+              }}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img
+              src='img/banner2.png'
+              onClick={() => {
+                navigation('/event/two');
+              }}
+            />
+          </SwiperSlide>
+        </Swiper>
+      </div>
+      <div>
+        <span
+          onClick={() => {
+            onClickHandler('top');
+          }}
+        >
+          top
+        </span>
+        <span
+          onClick={() => {
+            onClickHandler('shoes');
+          }}
+        >
+          shoes
+        </span>
+        <span
+          onClick={() => {
+            onClickHandler('outer');
+          }}
+        >
+          outer
+        </span>
+        <span
+          onClick={() => {
+            onClickHandler('bottom');
+          }}
+        >
+          bottom
+        </span>
+        <span
+          onClick={() => {
+            onClickHandler('ops');
+          }}
+        >
+          ops
+        </span>
+        <span
+          onClick={() => {
+            onClickHandler('bag');
+          }}
+        >
+          acc/bag
+        </span>
+      </div>
+      <div
+        style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(3, auto)',
+          gap: '2%',
+        }}
+      >
+        {product ? (
+          product.map((a) => {
+            return (
+              <div style={{ width: '100%' }}>
+                <ProductList product={a} key={a.id} />
+              </div>
+            );
+          })
+        ) : (
+          <div>로딩중...</div>
+        )}{' '}
+      </div>
+      <Button variant='primary' onClick={getProduct}>
+        더보기
+      </Button>{' '}
     </div>
   );
 }

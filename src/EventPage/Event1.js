@@ -4,7 +4,7 @@ function Event1() {
   return (
     <div style={{ width: '100%' }}>
       <img
-        src={process.env.PUBLIC_URL + '.././img/event1.png'}
+        src={process.env.PUBLIC_URL + '.././img/banner1.png'}
         style={{ width: '100%', height: '100%' }}
       />
     </div>

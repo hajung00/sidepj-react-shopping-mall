@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import Navlist from './Navlist';
+import Navlist from './Nav/Navlist';
 import { Route, Routes } from 'react-router-dom';
 import DetailPage from './pages/DetailPage';
 import Event from './EventPage/Event';

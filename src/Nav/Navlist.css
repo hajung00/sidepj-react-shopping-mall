@@ -1,0 +1,65 @@
+* {
+  box-sizing: border-box;
+}
+.nav-wrapper {
+  width: 80%;
+  height: 50px;
+  margin: 0 auto;
+  z-index: 10000;
+  position: absolute;
+  left: calc(100% - 80%);
+  top: 0;
+  transform: translateX(-150px);
+  border-radius: 3px;
+}
+.nav-item {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgba(250, 250, 250, 0.3);
+  margin: 20px 0;
+}
+.nav-logo {
+  padding-top: 12px;
+  font-family: 'Do Hyeon', sans-serif;
+  font-size: 22px;
+  font-weight: 300;
+}
+.nav-input {
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+.nav-input input {
+  width: 300px;
+  height: 33px;
+  border: none;
+  background-color: rgba(250, 250, 250, 0.3);
+}
+
+.nav-input span:first-child {
+  display: block;
+  border-left: 1.5px solid black;
+  padding: 2px 5px;
+  background-color: rgba(250, 250, 250, 0.3);
+}
+
+.nav-cart {
+  display: flex;
+  padding-top: 13px;
+}
+.nav-cart p {
+  font-family: 'Do Hyeon', sans-serif;
+  font-size: 18px;
+}
+.nav-cart span {
+  padding: 3px 5px;
+}
