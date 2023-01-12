@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 import axios from 'axios';
 import './App.css';
 
-// 1. shoes페이지에서 불러오는 경우(shoes) 2. detail페이지의 최근 본 상품에서 불러오는 경우(shoesId)
+// 1. main페이지에서 불러오는 경우(product) 2. detail페이지의 최근 본 상품에서 불러오는 경우(productId)
 const ProductList = ({ product, productId }) => {
   let navigate = useNavigate();
   console.log(product, productId);
@@ -18,7 +18,7 @@ const ProductList = ({ product, productId }) => {
     }
   }, []);
 
-  // shoes 가져오기
+  // product 가져오기
   const getProduct = async () => {
     console.log('getProduct');
     await axios
@@ -41,20 +41,15 @@ const ProductList = ({ product, productId }) => {
   console.log(_product);
 
   return (
-    <div className={'shose-' + `${product ? 'product' : 'list'}`}>
+    <div className={`${product ? 'product' : 'list'}-wrapper`}>
       {_product ? (
         <div
+          className='product'
           onClick={() => {
             navigate('/detail/' + _product.id, { state: _product });
           }}
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}
         >
-          <img src={_product.src} width='80%' />
+          <img src={_product.src} />
           <h4>{_product.title}</h4>
           <p>{_product.price}</p>
         </div>

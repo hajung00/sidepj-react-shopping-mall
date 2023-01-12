@@ -1,9 +1,43 @@
 @import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
 
 /* ProductList */
+/* 1. mainpage productlist */
+.product-wrapper {
+}
 
-.shose-list {
+.product-wrapper .product {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: calc(100% - 15%);
+  overflow: hidden;
+  margin: 10px 0;
+  height: 100%;
+}
+.product-wrapper .product img {
+  width: 90%;
+  object-fit: cover;
+  padding-top: 20px;
+  margin-bottom: 50px;
+}
+.product-wrapper .product h4 {
+  width: 100%;
+  text-align: center;
+  border-top: 2px solid #e2e2e2;
+  padding-top: 7px;
+}
+
+.product-wrapper .product h4,
+.product-wrapper .product p {
+  font-size: 16px;
+  margin-bottom: 2px;
+}
+/* 2. detail productlist */
+.list-wrapper {
   width: 200px;
+}
+.list-wrapper .product {
 }
 
 .start {
@@ -15,14 +49,10 @@
 }
 
 /* MainPage */
+/* 1. banner */
 .main-banner {
   position: relative;
 }
-/* .swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  background: #fff;
-} */
 
 .swiper {
   height: 600px !important;
@@ -32,9 +62,85 @@
   display: block;
   object-fit: cover;
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 
 .swiper-wrapper .swiper-slide-active {
   width: 100% !important;
+}
+
+/* 2. menu */
+.main-menu {
+  width: 90%;
+  height: 150px;
+  margin: 20px auto;
+}
+.menu-wrapper {
+  list-style: none;
+  padding-left: 60px;
+}
+.main-menu li {
+  width: calc(100% / 6 - 50px);
+  height: 130px;
+  float: left;
+  margin: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.main-menu li div {
+  /* border: 2px solid #afabab; */
+  border-radius: 15px;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  box-shadow: 3px 3px 3px 3px #e2e2e2;
+}
+
+.main-menu li:first-child div img {
+  width: 95%;
+  margin-left: 3px;
+  margin-top: 0px;
+}
+
+.main-menu li:nth-child(2) div img {
+  width: 87px;
+  margin-left: 2.2px;
+  margin-top: 2.7px;
+}
+
+.main-menu li:nth-child(3) div img {
+  width: 67%;
+  margin-left: 16px;
+  margin-top: 3px;
+}
+
+.main-menu li:nth-child(4) div img {
+  width: 60%;
+  margin-left: 19px;
+  margin-top: 1.5px;
+}
+.main-menu li:nth-child(5) div img {
+  width: 100%;
+  margin-left: 1.5px;
+  margin-top: 12px;
+}
+.main-menu li:nth-child(6) div img {
+  width: 85%;
+  margin-left: 6px;
+}
+.main-menu li span {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* 3. item */
+.item-wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  width: 90%;
+  margin: 20px auto;
+  padding-left: 40px;
+  height: fit-content;
 }

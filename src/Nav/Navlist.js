@@ -6,7 +6,7 @@ import { SearchOutlined, ShoppingOutlined } from '@ant-design/icons';
 const Navlist = () => {
   let navigate = useNavigate();
   const onNavigate = (link) => {
-    navigate('/link');
+    navigate(`/${link}`);
   };
 
   return (
@@ -33,7 +33,14 @@ const Navlist = () => {
         </Container>
       </Navbar> */}
       <div className='nav-item'>
-        <p className='nav-logo'>Shop</p>
+        <p
+          className='nav-logo'
+          onClick={() => {
+            onNavigate('');
+          }}
+        >
+          Shop
+        </p>
         <div className='nav-input'>
           <input type='text'></input>
           <span>
@@ -45,7 +52,11 @@ const Navlist = () => {
           <li>JOIN</li>
           <li>MY PAGE</li>
           <li>
-            <ShoppingOutlined />
+            <ShoppingOutlined
+              onClick={() => {
+                onNavigate('cart');
+              }}
+            />
           </li>
         </ul>
       </div>

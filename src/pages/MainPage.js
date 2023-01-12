@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ProductList from '../ProductList';
 import Button from 'react-bootstrap/Button';
 import axios from 'axios';
+import '../App.css';
 
 // swiper
 import { Swiper, SwiperSlide } from 'swiper/react'; // basic
@@ -16,10 +17,9 @@ SwiperCore.use([Navigation, Pagination]);
 function MainPage() {
   let [product, setProduct] = useState('');
 
-  const [top, setTop] = useState('');
   const [lastId, setLastId] = useState(0);
 
-  const [type, setType] = useState('top');
+  const [type, setType] = useState('shoes');
 
   const navigation = useNavigate();
 
@@ -32,10 +32,10 @@ function MainPage() {
   // shoes 3개씩 가져오기
   const getProduct = async () => {
     await axios.get(`http://localhost:3000/${type}`).then((result) => {
-      console.log(result.data.slice(lastId, lastId + 3));
-      setProduct([...product, ...result.data.slice(lastId, lastId + 3)]);
+      console.log(result.data.slice(lastId, lastId + 4));
+      setProduct([...product, ...result.data.slice(lastId, lastId + 4)]);
     });
-    setLastId(lastId + 3);
+    setLastId(lastId + 4);
     console.log(lastId);
   };
 
@@ -45,6 +45,7 @@ function MainPage() {
     setLastId(0);
   };
   return (
+    // Banner
     <div className='main-wrapper'>
       <div className='main-banner'>
         <Swiper
@@ -57,7 +58,7 @@ function MainPage() {
         >
           <SwiperSlide>
             <img
-              src='img/banner1.png'
+              src='img/banner2.png'
               onClick={() => {
                 navigation('/event/one');
               }}
@@ -73,64 +74,77 @@ function MainPage() {
           </SwiperSlide>
         </Swiper>
       </div>
-      <div>
-        <span
-          onClick={() => {
-            onClickHandler('top');
-          }}
-        >
-          top
-        </span>
-        <span
-          onClick={() => {
-            onClickHandler('shoes');
-          }}
-        >
-          shoes
-        </span>
-        <span
-          onClick={() => {
-            onClickHandler('outer');
-          }}
-        >
-          outer
-        </span>
-        <span
-          onClick={() => {
-            onClickHandler('bottom');
-          }}
-        >
-          bottom
-        </span>
-        <span
-          onClick={() => {
-            onClickHandler('ops');
-          }}
-        >
-          ops
-        </span>
-        <span
-          onClick={() => {
-            onClickHandler('bag');
-          }}
-        >
-          acc/bag
-        </span>
+      {/* menu */}
+      <div className='main-menu'>
+        <ul className='menu-wrapper'>
+          <li
+            onClick={() => {
+              onClickHandler('top');
+            }}
+          >
+            <div>
+              <img src={process.env.PUBLIC_URL + '.././img/top1.png'} />
+            </div>
+            <span>top</span>
+          </li>
+          <li
+            onClick={() => {
+              onClickHandler('outer');
+            }}
+          >
+            <div>
+              <img src={process.env.PUBLIC_URL + '.././img/outer1.png'} />
+            </div>
+            <span>outer</span>
+          </li>
+
+          <li
+            onClick={() => {
+              onClickHandler('bottom');
+            }}
+          >
+            <div>
+              <img src={process.env.PUBLIC_URL + '.././img/bottom.jpg'} />
+            </div>
+            <span>bottom</span>
+          </li>
+          <li
+            onClick={() => {
+              onClickHandler('ops');
+            }}
+          >
+            <div>
+              <img src={process.env.PUBLIC_URL + '.././img/ops.jpg'} />
+            </div>
+            <span>ops</span>
+          </li>
+          <li
+            onClick={() => {
+              onClickHandler('shoes');
+            }}
+          >
+            <div>
+              <img src={process.env.PUBLIC_URL + '.././img/shoes.jpg'} />
+            </div>
+            <span>shoes</span>
+          </li>
+          <li
+            onClick={() => {
+              onClickHandler('bag');
+            }}
+          >
+            <div>
+              <img src={process.env.PUBLIC_URL + '.././img/bag.png'} />
+            </div>
+            <span>acc/bag</span>
+          </li>
+        </ul>
       </div>
-      <div
-        style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(3, auto)',
-          gap: '2%',
-        }}
-      >
+      {/* item */}
+      <div className='item-wrapper'>
         {product ? (
           product.map((a) => {
-            return (
-              <div style={{ width: '100%' }}>
-                <ProductList product={a} key={a.id} />
-              </div>
-            );
+            return <ProductList product={a} key={a.id} />;
           })
         ) : (
           <div>로딩중...</div>
