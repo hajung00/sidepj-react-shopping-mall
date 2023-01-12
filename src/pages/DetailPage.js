@@ -192,7 +192,7 @@ function DetailPage() {
           </div>
 
           <Nav variant='tabs' defaultActiveKey='link0'>
-            <Nav.Item>
+            <Nav.Item style={{ width: '10%' }}>
               <Nav.Link
                 eventKey='link0'
                 onClick={() => {
@@ -202,7 +202,7 @@ function DetailPage() {
                 DETAIL
               </Nav.Link>
             </Nav.Item>
-            <Nav.Item>
+            <Nav.Item style={{ width: '10%' }}>
               <Nav.Link
                 eventKey='link1'
                 onClick={() => {
@@ -212,7 +212,7 @@ function DetailPage() {
                 REVIEW
               </Nav.Link>
             </Nav.Item>
-            <Nav.Item>
+            <Nav.Item style={{ width: '10%' }}>
               <Nav.Link
                 eventKey='link2'
                 onClick={() => {

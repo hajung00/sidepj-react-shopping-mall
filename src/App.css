@@ -37,7 +37,8 @@
 .list-wrapper {
   width: 200px;
 }
-.list-wrapper .product {
+.list-wrapper .product img {
+  width: 100%;
 }
 
 .start {
