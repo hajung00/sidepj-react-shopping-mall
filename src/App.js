@@ -16,7 +16,6 @@ function App() {
 
   return (
     <div className='App'>
-      <Navlist />
       <Routes>
         <Route path='/' element={<MainPage />}></Route>
         <Route path='/detail/:id' element={<DetailPage />}></Route>

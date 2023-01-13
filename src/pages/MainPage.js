@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ProductList from '../ProductList';
-import Button from 'react-bootstrap/Button';
+
 import axios from 'axios';
 import '../App.css';
 
@@ -11,6 +11,7 @@ import 'swiper/css'; //basic
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { useNavigate } from 'react-router-dom';
+import Navlist from '../Nav/Navlist';
 
 SwiperCore.use([Navigation, Pagination]);
 
@@ -44,116 +45,146 @@ function MainPage() {
     setProduct('');
     setLastId(0);
   };
-  return (
-    // Banner
-    <div className='main-wrapper'>
-      <div className='main-banner'>
-        <Swiper
-          slidesPerView={1}
-          spaceBetween={30}
-          mousewheel={true}
-          pagination={{
-            clickable: true,
-          }}
-        >
-          <SwiperSlide>
-            <img
-              src='img/banner2.png'
-              onClick={() => {
-                navigation('/event/one');
-              }}
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img
-              src='img/banner2.png'
-              onClick={() => {
-                navigation('/event/two');
-              }}
-            />
-          </SwiperSlide>
-        </Swiper>
-      </div>
-      {/* menu */}
-      <div className='main-menu'>
-        <ul className='menu-wrapper'>
-          <li
-            onClick={() => {
-              onClickHandler('top');
-            }}
-          >
-            <div>
-              <img src={process.env.PUBLIC_URL + '.././img/top1.png'} />
-            </div>
-            <span>top</span>
-          </li>
-          <li
-            onClick={() => {
-              onClickHandler('outer');
-            }}
-          >
-            <div>
-              <img src={process.env.PUBLIC_URL + '.././img/outer1.png'} />
-            </div>
-            <span>outer</span>
-          </li>
 
-          <li
-            onClick={() => {
-              onClickHandler('bottom');
+  // 스크롤
+  const [scrollY, setScrollY] = useState(0);
+  const [scrollActive, setScrollActive] = useState(false);
+
+  const scrollFixed = () => {
+    if (scrollY >= 100) {
+      setScrollY(window.pageYOffset);
+      setScrollActive(true);
+    } else {
+      setScrollY(window.pageYOffset);
+      setScrollActive(false);
+    }
+  };
+
+  useEffect(() => {
+    const scrollListener = () => {
+      window.addEventListener('scroll', scrollFixed);
+    };
+    scrollListener();
+    return () => {
+      window.removeEventListener('scroll', scrollFixed);
+    };
+  });
+  console.log(scrollY, scrollActive);
+
+  return (
+    <>
+      <Navlist scroll={scrollActive} />
+      <div className='main-wrapper'>
+        <div className='main-banner'>
+          <Swiper
+            slidesPerView={1}
+            spaceBetween={30}
+            mousewheel={true}
+            pagination={{
+              clickable: true,
             }}
           >
-            <div>
-              <img src={process.env.PUBLIC_URL + '.././img/bottom.jpg'} />
-            </div>
-            <span>bottom</span>
-          </li>
-          <li
-            onClick={() => {
-              onClickHandler('ops');
-            }}
-          >
-            <div>
-              <img src={process.env.PUBLIC_URL + '.././img/ops.jpg'} />
-            </div>
-            <span>ops</span>
-          </li>
-          <li
-            onClick={() => {
-              onClickHandler('shoes');
-            }}
-          >
-            <div>
-              <img src={process.env.PUBLIC_URL + '.././img/shoes.jpg'} />
-            </div>
-            <span>shoes</span>
-          </li>
-          <li
-            onClick={() => {
-              onClickHandler('bag');
-            }}
-          >
-            <div>
-              <img src={process.env.PUBLIC_URL + '.././img/bag.png'} />
-            </div>
-            <span>acc/bag</span>
-          </li>
-        </ul>
+            <SwiperSlide>
+              <img
+                src='img/banner2.png'
+                onClick={() => {
+                  navigation('/event/one');
+                }}
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img
+                src='img/banner2.png'
+                onClick={() => {
+                  navigation('/event/two');
+                }}
+              />
+            </SwiperSlide>
+          </Swiper>
+        </div>
+        {/* menu */}
+        <div className='main-menu'>
+          <ul className='menu-wrapper'>
+            <li
+              onClick={() => {
+                onClickHandler('top');
+              }}
+            >
+              <div>
+                <img src={process.env.PUBLIC_URL + '.././img/top1.png'} />
+              </div>
+              <span>top</span>
+            </li>
+            <li
+              onClick={() => {
+                onClickHandler('outer');
+              }}
+            >
+              <div>
+                <img src={process.env.PUBLIC_URL + '.././img/outer1.png'} />
+              </div>
+              <span>outer</span>
+            </li>
+
+            <li
+              onClick={() => {
+                onClickHandler('bottom');
+              }}
+            >
+              <div>
+                <img src={process.env.PUBLIC_URL + '.././img/bottom.jpg'} />
+              </div>
+              <span>bottom</span>
+            </li>
+            <li
+              onClick={() => {
+                onClickHandler('ops');
+              }}
+            >
+              <div>
+                <img src={process.env.PUBLIC_URL + '.././img/ops.jpg'} />
+              </div>
+              <span>ops</span>
+            </li>
+            <li
+              onClick={() => {
+                onClickHandler('shoes');
+              }}
+            >
+              <div>
+                <img src={process.env.PUBLIC_URL + '.././img/shoes.jpg'} />
+              </div>
+              <span>shoes</span>
+            </li>
+            <li
+              onClick={() => {
+                onClickHandler('bag');
+              }}
+            >
+              <div>
+                <img src={process.env.PUBLIC_URL + '.././img/bag.png'} />
+              </div>
+              <span>acc/bag</span>
+            </li>
+          </ul>
+        </div>
+        {/* item */}
+        <div className='item-wrapper'>
+          {product ? (
+            product.map((a) => {
+              return <ProductList product={a} key={a.id} />;
+            })
+          ) : (
+            <div>로딩중...</div>
+          )}{' '}
+        </div>
+        <div className='btn-wrapper'>
+          <button className='btn-more' onClick={getProduct}>
+            더보기
+          </button>
+        </div>
       </div>
-      {/* item */}
-      <div className='item-wrapper'>
-        {product ? (
-          product.map((a) => {
-            return <ProductList product={a} key={a.id} />;
-          })
-        ) : (
-          <div>로딩중...</div>
-        )}{' '}
-      </div>
-      <Button variant='primary' onClick={getProduct}>
-        더보기
-      </Button>{' '}
-    </div>
+    </>
   );
 }
 

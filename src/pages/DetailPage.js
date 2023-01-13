@@ -7,6 +7,7 @@ import { useLocation } from 'react-router';
 import ProductList from '../ProductList';
 import { useNavigate } from 'react-router-dom';
 import DetailComponent from '../DetailPage/DetailComponent';
+import Navlist from '../Nav/Navlist';
 
 function DetailPage() {
   const { state } = useLocation();
@@ -103,6 +104,7 @@ function DetailPage() {
 
   return (
     <div>
+      <Navlist scroll={true} />
       <div className='container'>
         {/* {visible === true ? (
           <div className="alert alert-warning">2초이내 구매시 할인</div>

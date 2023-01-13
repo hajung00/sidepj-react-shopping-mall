@@ -1,7 +1,7 @@
 * {
   box-sizing: border-box;
 }
-.nav-wrapper {
+.main-nav-wrapper {
   width: 68%;
   height: 50px;
   margin: 0 auto;
@@ -11,6 +11,25 @@
   top: 0;
   transform: translateX(-290px);
   border-radius: 3px;
+}
+/* nav 스크롤 이벤트 */
+.fix-nav-wrapper {
+  width: 100%;
+  margin: 0 auto;
+  z-index: 10000;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+.fix-nav-wrapper .nav-item {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgba(250, 250, 250, 0.6);
+  margin: 0;
 }
 .nav-item {
   width: 100%;

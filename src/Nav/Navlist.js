@@ -1,37 +1,16 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Nav from './Navlist.css';
 import { useNavigate } from 'react-router-dom';
 import { SearchOutlined, ShoppingOutlined } from '@ant-design/icons';
 
-const Navlist = () => {
+const Navlist = ({ scroll }) => {
   let navigate = useNavigate();
   const onNavigate = (link) => {
     navigate(`/${link}`);
   };
 
   return (
-    <nav className='nav-wrapper'>
-      {/* <Navbar bg="white" variant="white">
-        <Container>
-          <Navbar.Brand href="#home">ShoeShop</Navbar.Brand>
-          <Nav className="me-auto">
-            <Nav.Link
-              onClick={() => {
-                navigate("/");
-              }}
-            >
-              Home
-            </Nav.Link>
-            <Nav.Link
-              onClick={() => {
-                navigate("/cart");
-              }}
-            >
-              Cart
-            </Nav.Link>
-          </Nav>
-        </Container>
-      </Navbar> */}
+    <nav className={`${scroll === true ? 'fix' : 'main'}-nav-wrapper`}>
       <div className='nav-item'>
         <p
           className='nav-logo'
