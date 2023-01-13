@@ -50,8 +50,10 @@ const ProductList = ({ product, productId }) => {
           }}
         >
           <img src={_product.src} />
-          <h4>{_product.title}</h4>
-          <p>{_product.price}</p>
+          <div>
+            <h4>{_product.title}</h4>
+            <p>{_product.price}</p>
+          </div>
         </div>
       ) : (
         <div>로딩중...</div>

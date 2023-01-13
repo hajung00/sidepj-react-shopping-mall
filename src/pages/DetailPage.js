@@ -17,8 +17,8 @@ function DetailPage() {
   const [items, setItems] = useState();
   console.log(state);
 
-  const [size, setSize] = useState(230);
-  const [color, setColor] = useState('black');
+  const [size, setSize] = useState('-[필수] size 선택-');
+  const [color, setColor] = useState('-[필수] color 선택-');
 
   console.log(size, color);
   // let [visible, setVisible] = useState(true);
@@ -116,21 +116,22 @@ function DetailPage() {
         >
           {count}
         </button> */}
-        <div className='row'>
-          <div className='col-md-6'>
-            <img src={state.src} width='100%' />
+        <div className='product-wrapper'>
+          <div className='product-image'>
+            <img src={state.src} />
           </div>
-          <div className='col-md-6'>
-            <h4 className='pt-5'>{state.title}</h4>
+          <div className='product-info'>
+            <h4 className=''>{state.title}</h4>
             <p>{state.content}</p>
             <p>{state.price}</p>
-            <div>
+            <div className='product-choice'>
               <select
                 value={size}
                 onChange={(e) => {
                   setSize(e.target.value);
                 }}
               >
+                <option>- [필수] size 선택 -</option>
                 <option>230</option>
                 <option>240</option>
                 <option>250</option>
@@ -144,6 +145,7 @@ function DetailPage() {
                   setColor(e.target.value);
                 }}
               >
+                <option>- [필수] color 선택 -</option>
                 <option>black</option>
                 <option>white</option>
                 <option>red</option>
@@ -151,7 +153,7 @@ function DetailPage() {
               </select>
             </div>
             <button
-              className='btn btn-danger'
+              className=''
               onClick={() => {
                 dispatch(
                   addCart({
@@ -167,19 +169,15 @@ function DetailPage() {
                 onComfirm();
               }}
             >
-              주문하기
+              쇼핑백 담기
             </button>
+            <button>주문하기</button>
           </div>
+        </div>
 
-          <h4 className='pt-5'>최근 본 상품</h4>
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(10, auto)',
-              gap: '2%',
-              width: '600px',
-            }}
-          >
+        <div className='last-product-wrapper'>
+          <div className='last-product'>최근 본 상품</div>
+          <div className='last-product-list'>
             {items ? (
               items.map((item) => {
                 return (
@@ -192,47 +190,47 @@ function DetailPage() {
               <div>로딩중</div>
             )}
           </div>
-
-          <Nav variant='tabs' defaultActiveKey='link0'>
-            <Nav.Item style={{ width: '10%' }}>
-              <Nav.Link
-                eventKey='link0'
-                onClick={() => {
-                  change(0);
-                }}
-              >
-                DETAIL
-              </Nav.Link>
-            </Nav.Item>
-            <Nav.Item style={{ width: '10%' }}>
-              <Nav.Link
-                eventKey='link1'
-                onClick={() => {
-                  change(1);
-                }}
-              >
-                REVIEW
-              </Nav.Link>
-            </Nav.Item>
-            <Nav.Item style={{ width: '10%' }}>
-              <Nav.Link
-                eventKey='link2'
-                onClick={() => {
-                  change(2);
-                }}
-              >
-                QnA
-              </Nav.Link>
-            </Nav.Item>
-          </Nav>
-          {detail.map((a, i) => {
-            return (
-              <div className={'start ' + animation}>
-                {detail[i] != 0 ? <DetailComponent i={i} /> : null}
-              </div>
-            );
-          })}
         </div>
+
+        <Nav variant='tabs' defaultActiveKey='link0'>
+          <Nav.Item style={{ width: '10%' }}>
+            <Nav.Link
+              eventKey='link0'
+              onClick={() => {
+                change(0);
+              }}
+            >
+              DETAIL
+            </Nav.Link>
+          </Nav.Item>
+          <Nav.Item style={{ width: '10%' }}>
+            <Nav.Link
+              eventKey='link1'
+              onClick={() => {
+                change(1);
+              }}
+            >
+              REVIEW
+            </Nav.Link>
+          </Nav.Item>
+          <Nav.Item style={{ width: '10%' }}>
+            <Nav.Link
+              eventKey='link2'
+              onClick={() => {
+                change(2);
+              }}
+            >
+              QnA
+            </Nav.Link>
+          </Nav.Item>
+        </Nav>
+        {detail.map((a, i) => {
+          return (
+            <div className={'start ' + animation}>
+              {detail[i] != 0 ? <DetailComponent i={i} /> : null}
+            </div>
+          );
+        })}
       </div>
     </div>
   );

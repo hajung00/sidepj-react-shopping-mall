@@ -49,11 +49,11 @@ function Qna() {
   }, [dummy]);
 
   return (
-    <div style={{ margin: '50px 10px' }}>
-      <div style={{ margin: '50px 0px' }}>
+    <div style={{ margin: '30px 10px' }}>
+      <div style={{ marginBottom: '30px' }}>
         <h4>상품 문의</h4>
       </div>
-      <Table style={{ borderRadius: '5px', marginBottom: '150px' }}>
+      <Table style={{ borderRadius: '5px', marginBottom: '100px' }}>
         <thead style={{ backgroundColor: 'rgb(240, 239, 239)' }}>
           <tr>
             <th style={{ width: '150px' }}>답변상태</th>
@@ -84,6 +84,7 @@ function Qna() {
             height: '35px',
             borderColor: 'gray',
             border: 'none',
+            marginBottom: '50px',
           }}
           onClick={showModal}
         >
@@ -111,6 +112,7 @@ function Qna() {
           >
             <div>
               <select
+                style={{ width: '100%', height: '27px', marginBottom: '5px' }}
                 value={inquiryType}
                 onChange={(e) => {
                   setInquiryType(e.target.value);
@@ -125,6 +127,7 @@ function Qna() {
                 <textarea
                   value={askContent}
                   onChange={(e) => setAskContent(e.target.value)}
+                  style={{ width: '100%', height: '150px' }}
                 ></textarea>
               </div>
             </div>

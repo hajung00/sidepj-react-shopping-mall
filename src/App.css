@@ -21,6 +21,9 @@
   padding-top: 20px;
   margin-bottom: 50px;
 }
+.product-wrapper .product div {
+  width: 100%;
+}
 .product-wrapper .product h4 {
   width: 100%;
   text-align: center;
@@ -32,13 +35,40 @@
 .product-wrapper .product p {
   font-size: 16px;
   margin-bottom: 2px;
+  text-align: center;
 }
+
 /* 2. detail productlist */
 .list-wrapper {
-  width: 200px;
+  width: 150px;
+}
+.list-wrapper .product {
+  border: 1px solid gray;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
 }
 .list-wrapper .product img {
   width: 100%;
+  margin-bottom: 20px;
+}
+.list-wrapper .product div {
+  width: 100%;
+  background-color: #e2e2e2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 0;
+}
+.list-wrapper .product h4,
+.list-wrapper .product p {
+  font-size: 16px;
+  margin: 0;
 }
 
 .start {
@@ -168,4 +198,68 @@
   font-size: 20px;
   font-weight: bold;
   transition: all 0.2s;
+}
+
+/* Detailpage */
+.container {
+  /* background-color: aqua; */
+  transform: translateY(60px);
+}
+.product-wrapper {
+  display: flex;
+  flex-direction: row;
+  padding: 50px 0;
+  width: 100%;
+}
+.product-wrapper .product-image {
+  width: 65%;
+}
+.product-wrapper .product-image img {
+  width: 100%;
+}
+.product-wrapper .product-info {
+  width: calc(100% - 65%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 050px;
+}
+.product-wrapper .product-choice {
+  margin: 30px 0;
+  display: flex;
+  flex-direction: column;
+}
+.product-wrapper .product-choice select {
+  margin: 3px 0;
+  font-size: 12px;
+  height: 30px;
+}
+.product-info button:first-of-type {
+  background-color: black;
+  color: white;
+  font-size: 8px;
+  height: 45px;
+  margin-bottom: 10px;
+}
+.product-info button:nth-of-type(2) {
+  background-color: white;
+  color: black;
+  font-size: 8px;
+  height: 45px;
+  border: 1px solid black;
+}
+.last-product-wrapper {
+  width: 100%;
+  margin-bottom: 80px;
+}
+.last-product-wrapper .last-product {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.last-product-wrapper .last-product-list {
+  display: grid;
+  grid-template-columns: repeat(10, auto);
+  gap: 2%;
+  width: 600px;
 }

@@ -6,10 +6,8 @@ function Detail() {
   console.log('state', state);
   return (
     <>
-      <div>{state.title}</div>
-      <div>{state.content}</div>
       <div>
-        <img src={state.src} />
+        <img src={state.src} width='80%' />
       </div>
     </>
   );

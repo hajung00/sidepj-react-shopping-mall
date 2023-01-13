@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
+import Navlist from '../Nav/Navlist';
 import { addCount } from '../store';
 
 function Cart() {
@@ -17,7 +18,8 @@ function Cart() {
 
   return (
     <div>
-      <Table>
+      <Navlist scroll={true} />
+      <Table style={{ transform: 'translateY(100px)' }}>
         <thead>
           <tr>
             <th>선택</th>
@@ -84,25 +86,45 @@ function Cart() {
           ))}
         </tbody>
       </Table>
-      <div>
-        total:
-        {isCheckingProduct.length >= 1
-          ? isCheckingProduct
-              .map((item) => item.price)
-              .reduce((total, i) => total + i)
-          : ''}
-      </div>
-      <button
-        onClick={() => {
-          alert(
-            `총 가격: ${isCheckingProduct
-              .map((item) => item.price)
-              .reduce((total, i) => total + i)} 주문 완료!`
-          );
+      <div
+        style={{
+          marginTop: '130px',
+          float: 'right',
+          marginRight: '10%',
         }}
       >
-        주문하기
-      </button>
+        <div>
+          총 주문 금액 :
+          {isCheckingProduct.length >= 1
+            ? isCheckingProduct
+                .map((item) => item.price)
+                .reduce((total, i) => total + i)
+            : ''}
+        </div>
+        <button
+          style={{
+            marginTop: '10px',
+            borderRadius: '5px',
+            backgroundColor: 'gray',
+            color: 'white',
+            fontWeight: 'bold',
+            width: '100px',
+            height: '35px',
+            borderColor: 'gray',
+            border: 'none',
+            marginBottom: '50px',
+          }}
+          onClick={() => {
+            alert(
+              `총 가격: ${isCheckingProduct
+                .map((item) => item.price)
+                .reduce((total, i) => total + i)} 주문 완료!`
+            );
+          }}
+        >
+          주문하기
+        </button>
+      </div>
     </div>
   );
 }

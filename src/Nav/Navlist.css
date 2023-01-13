@@ -28,7 +28,7 @@
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  background-color: rgba(250, 250, 250, 0.6);
+  background-color: rgba(250, 250, 250, 0.8);
   margin: 0;
 }
 .nav-item {
@@ -46,6 +46,11 @@
   padding-left: 7px;
   font-size: 22px;
   font-weight: 500;
+  transition: all 0.2s;
+}
+.nav-logo:hover {
+  font-size: 25px;
+  cursor: pointer;
 }
 .nav-input {
   overflow: hidden;
