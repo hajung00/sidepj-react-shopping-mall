@@ -1,5 +1,151 @@
 @import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
 
+@media (min-width: 1024px) {
+  .main-nav-wrapper {
+    position: fixed;
+  }
+  .nav-item {
+    justify-content: space-around;
+    padding: 0;
+  }
+  .item-wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    width: 90%;
+    margin: 20px auto;
+    padding-left: 40px;
+    height: fit-content;
+  }
+  .main-menu li {
+    width: calc(100% / 6 - 50px);
+    float: left;
+    margin: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .menu-wrapper {
+    list-style: none;
+    padding-left: 60px;
+  }
+  .btn-more {
+    width: 20%;
+    height: 42px;
+    border-radius: 20px;
+    color: white;
+    background-color: #e2e2e2;
+    border: 1px solid #e2e2e2;
+    font-size: 18px;
+    font-weight: bold;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .main-nav-wrapper {
+    position: inherit;
+  }
+  .nav-item {
+    justify-content: space-between;
+    padding: 0 38px;
+  }
+  .fix-nav-wrapper .nav-item {
+    justify-content: space-between;
+    padding: 0 38px;
+  }
+  .nav-input {
+    display: none;
+  }
+  .item-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    width: 90%;
+    margin: 20px auto;
+    padding-left: 40px;
+    height: fit-content;
+  }
+  .main-menu li {
+    width: calc(100% / 6 - 50px);
+    float: left;
+    margin: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .menu-wrapper {
+    list-style: none;
+    padding-left: 60px;
+  }
+  .btn-more {
+    width: 20%;
+    height: 42px;
+    border-radius: 20px;
+    color: white;
+    background-color: #e2e2e2;
+    border: 1px solid #e2e2e2;
+    font-size: 16px;
+    font-weight: bold;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .main-nav-wrapper {
+    position: inherit;
+  }
+  .nav-item {
+    justify-content: space-between;
+    padding: 0 38px;
+  }
+  .fix-nav-wrapper .nav-item {
+    justify-content: space-between;
+    padding: 0 38px;
+  }
+  .nav-input {
+    display: none;
+  }
+  .item-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    width: 90%;
+    margin: 20px auto;
+    padding-left: 40px;
+    height: fit-content;
+  }
+  .main-menu li {
+    width: calc(100% / 6 - 35px);
+    float: left;
+    margin: 10px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .menu-wrapper {
+    list-style: none;
+    padding-left: 0px;
+  }
+  .item-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    width: 90%;
+    margin: 20px auto;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  .btn-more {
+    width: 20%;
+    height: 42px;
+    border-radius: 20px;
+    color: white;
+    background-color: #e2e2e2;
+    border: 1px solid #e2e2e2;
+    font-size: 15px;
+    font-weight: bold;
+  }
+}
+.App {
+  min-width: 550px;
+}
 /* ProductList */
 /* 1. mainpage productlist */
 .product-wrapper {
@@ -16,7 +162,7 @@
   height: 100%;
 }
 .product-wrapper .product img {
-  width: 230px;
+  width: 90%;
   object-fit: cover;
   padding-top: 20px;
   margin-bottom: 50px;
@@ -51,14 +197,14 @@
   flex-direction: column;
   align-items: center;
   justify-content: end;
+  width: 132px;
 }
 .list-wrapper .product img {
-  width: 100%;
-  margin-bottom: 20px;
+  width: 130px;
 }
 .list-wrapper .product div {
   width: 100%;
-  background-color: #e2e2e2;
+  background-color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -85,10 +231,6 @@
   position: relative;
 }
 
-.swiper {
-  height: 600px !important;
-}
-
 .swiper-slide img {
   display: block;
   object-fit: cover;
@@ -103,94 +245,33 @@
 /* 2. menu */
 .main-menu {
   width: 90%;
-  height: 150px;
-  margin: 20px auto;
+  margin: 4% auto;
 }
-.menu-wrapper {
-  list-style: none;
-  padding-left: 60px;
+.main-menu li:hover {
+  cursor: pointer;
 }
-.main-menu li {
-  width: calc(100% / 6 - 50px);
-  height: 130px;
-  float: left;
-  margin: 10px 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+
 .main-menu li div {
   /* border: 2px solid #afabab; */
   border-radius: 15px;
-  width: 100px;
-  height: 100px;
   overflow: hidden;
   box-shadow: 3px 3px 3px 3px #e2e2e2;
 }
 
-.main-menu li:first-child div img {
-  width: 95%;
+.main-menu li div img {
+  width: 100%;
   margin-left: 3px;
   margin-top: 0px;
 }
 
-.main-menu li:nth-child(2) div img {
-  width: 87px;
-  margin-left: 2.2px;
-  margin-top: 2.7px;
-}
-
-.main-menu li:nth-child(3) div img {
-  width: 67%;
-  margin-left: 16px;
-  margin-top: 3px;
-}
-
-.main-menu li:nth-child(4) div img {
-  width: 60%;
-  margin-left: 19px;
-  margin-top: 1.5px;
-}
-.main-menu li:nth-child(5) div img {
-  width: 100%;
-  margin-left: 1.5px;
-  margin-top: 12px;
-}
-.main-menu li:nth-child(6) div img {
-  width: 85%;
-  margin-left: 6px;
-}
-.main-menu li span {
-  font-size: 18px;
-  font-weight: 500;
-}
-
 /* 3. item */
-.item-wrapper {
-  display: grid;
-  grid-template-columns: repeat(4, auto);
-  width: 90%;
-  margin: 20px auto;
-  padding-left: 40px;
-  height: fit-content;
-}
 
 /* 4. button */
 .btn-wrapper {
   width: 100%;
   margin: 50px 40%;
 }
-.btn-more {
-  width: 20%;
-  height: 42px;
-  border-radius: 20px;
-  color: white;
-  background-color: #e2e2e2;
-  border: 1px solid #e2e2e2;
-  font-size: 18px;
-  font-weight: bold;
-}
+
 .btn-more:hover,
 .btn-more:hover:focus {
   background-color: gray;
@@ -208,7 +289,8 @@
 .product-wrapper {
   display: flex;
   flex-direction: row;
-  padding: 50px 0;
+  padding: 25px 0;
+  padding-bottom: 0px;
   width: 100%;
 }
 .product-wrapper .product-image {
@@ -249,8 +331,10 @@
   border: 1px solid black;
 }
 .last-product-wrapper {
-  width: 100%;
+  max-width: 100%;
   margin-bottom: 80px;
+  overflow: auto;
+  padding: 30px;
 }
 .last-product-wrapper .last-product {
   font-size: 18px;

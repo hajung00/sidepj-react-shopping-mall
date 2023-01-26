@@ -111,7 +111,7 @@ function MainPage() {
               }}
             >
               <div>
-                <img src={process.env.PUBLIC_URL + '.././img/top1.png'} />
+                <img src={process.env.PUBLIC_URL + '.././img/top1.jpg'} />
               </div>
               <span>top</span>
             </li>
@@ -121,7 +121,7 @@ function MainPage() {
               }}
             >
               <div>
-                <img src={process.env.PUBLIC_URL + '.././img/outer1.png'} />
+                <img src={process.env.PUBLIC_URL + '.././img/outer1.jpg'} />
               </div>
               <span>outer</span>
             </li>
@@ -162,7 +162,7 @@ function MainPage() {
               }}
             >
               <div>
-                <img src={process.env.PUBLIC_URL + '.././img/bag.png'} />
+                <img src={process.env.PUBLIC_URL + '.././img/bag.jpg'} />
               </div>
               <span>acc/bag</span>
             </li>
