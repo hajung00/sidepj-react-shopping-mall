@@ -94,7 +94,7 @@ function MainPage() {
             </SwiperSlide>
             <SwiperSlide>
               <img
-                src='img/banner2.png'
+                src='img/banner1.png'
                 onClick={() => {
                   navigation('/event/two');
                 }}
