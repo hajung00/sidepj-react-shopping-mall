@@ -2,7 +2,7 @@ import React from 'react';
 import Detail from './DetailComponentList/Detail';
 import Qna from './DetailComponentList/Qna/Qna';
 import Review from './DetailComponentList/Review/Review';
-function DetailComponent({ i }) {
+function DetailComponent({ i, state }) {
   switch (i) {
     case 0:
       return (
@@ -15,7 +15,7 @@ function DetailComponent({ i }) {
     case 1:
       return (
         <div>
-          <Review />
+          <Review state={state} />
         </div>
       );
       break;

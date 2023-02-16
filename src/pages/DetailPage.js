@@ -125,20 +125,35 @@ function DetailPage() {
             <p>{state.content}</p>
             <p>{state.price}</p>
             <div className='product-choice'>
-              <select
-                value={size}
-                onChange={(e) => {
-                  setSize(e.target.value);
-                }}
-              >
-                <option>- [필수] size 선택 -</option>
-                <option>230</option>
-                <option>240</option>
-                <option>250</option>
-                <option>260</option>
-                <option>270</option>
-                <option>280</option>
-              </select>
+              {state.type === 'shoes' ? (
+                <select
+                  value={size}
+                  onChange={(e) => {
+                    setSize(e.target.value);
+                  }}
+                >
+                  <option>- [필수] size 선택 -</option>
+                  <option>230</option>
+                  <option>240</option>
+                  <option>250</option>
+                  <option>260</option>
+                  <option>270</option>
+                  <option>280</option>
+                </select>
+              ) : (
+                <select
+                  value={size}
+                  onChange={(e) => {
+                    setSize(e.target.value);
+                  }}
+                >
+                  <option>- [필수] size 선택 -</option>
+                  <option>S</option>
+                  <option>M</option>
+                  <option>L</option>
+                </select>
+              )}
+
               <select
                 value={color}
                 onChange={(e) => {
@@ -227,7 +242,7 @@ function DetailPage() {
         {detail.map((a, i) => {
           return (
             <div className={'start ' + animation}>
-              {detail[i] != 0 ? <DetailComponent i={i} /> : null}
+              {detail[i] != 0 ? <DetailComponent i={i} state={state} /> : null}
             </div>
           );
         })}

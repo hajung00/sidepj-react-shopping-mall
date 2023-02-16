@@ -89,3 +89,7 @@
   content: '|';
   padding-left: 20px;
 }
+
+.nav-my:hover {
+  cursor: pointer;
+}

@@ -46,7 +46,12 @@ const ProductList = ({ product, productId }) => {
         <div
           className='product'
           onClick={() => {
-            navigate('/detail/' + _product.id, { state: _product });
+            navigate(
+              '/detail/' + _product.title.replace(/ /g, '').toLowerCase(),
+              {
+                state: _product,
+              }
+            );
           }}
         >
           <img src={_product.src} />

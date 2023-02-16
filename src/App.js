@@ -8,6 +8,8 @@ import MainPage from './pages/MainPage';
 import './App.css';
 import Event1 from './EventPage/Event1';
 import Event2 from './EventPage/Event2';
+import LoginPage from './pages/LoginPage';
+import JoinPage from './pages/JoinPage';
 
 function App() {
   useEffect(() => {
@@ -18,6 +20,8 @@ function App() {
     <div className='App'>
       <Routes>
         <Route path='/' element={<MainPage />}></Route>
+        <Route path='/login' element={<LoginPage />}></Route>
+        <Route path='/join' element={<JoinPage />}></Route>
         <Route path='/detail/:id' element={<DetailPage />}></Route>
         <Route path='/event' element={<Event />}>
           <Route path='one' element={<Event1 />}></Route>

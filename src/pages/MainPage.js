@@ -20,7 +20,7 @@ function MainPage() {
 
   const [lastId, setLastId] = useState(0);
 
-  const [type, setType] = useState('shoes');
+  const [type, setType] = useState('top');
 
   const navigation = useNavigate();
 
