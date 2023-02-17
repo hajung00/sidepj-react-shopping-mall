@@ -44,8 +44,7 @@ const Navlist = ({ scroll }) => {
     await getProduct();
     searchProduct = product.find(
       (item) =>
-        item.title.replace(/ /g, '').toLowerCase() ===
-        search.replace(/ /g, '').toLowerCase()
+        item.title.replace(/ /g, '') === search.replace(/ /g, '').toUpperCase()
     );
     navigate('/detail/' + searchProduct.title.replace(/ /g, ''), {
       state: searchProduct,
