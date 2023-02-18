@@ -32,7 +32,7 @@ function MainPage() {
 
   // shoes 3개씩 가져오기
   const getProduct = async () => {
-    await axios.get(`http://localhost:3000/${type}`).then((result) => {
+    await axios.get(`http://localhost:8000/${type}`).then((result) => {
       console.log(result.data.slice(lastId, lastId + 4));
       setProduct([...product, ...result.data.slice(lastId, lastId + 4)]);
     });
