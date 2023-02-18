@@ -14,10 +14,12 @@ const Navlist = ({ scroll }) => {
   let product = [];
   let searchProduct = '';
   const getProduct = async () => {
-    await axios.get(`http://localhost:3000/shoes`).then((result) => {
-      product = [...result.data];
-      console.log(product);
-    });
+    await axios
+      .get(`https://hajung-shop.herokuapp.com/shoes`)
+      .then((result) => {
+        product = [...result.data];
+        console.log(product);
+      });
     await axios.get(`https://hajung-shop.herokuapp.com/top`).then((result) => {
       product = [...product, ...result.data];
       console.log(product);
