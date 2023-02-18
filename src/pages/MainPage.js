@@ -7,9 +7,11 @@ import '../App.css';
 // swiper
 import { Swiper, SwiperSlide } from 'swiper/react'; // basic
 import SwiperCore, { Navigation, Pagination } from 'swiper';
-import 'swiper/css'; //basic
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+
+import 'swiper/swiper-bundle.min.css';
+import 'swiper/swiper.min.css';
+import 'swiper/components/navigation/navigation.min.css';
+import 'swiper/components/pagination/pagination.min.css';
 import { useNavigate } from 'react-router-dom';
 import Navlist from '../Nav/Navlist';
 
@@ -32,10 +34,12 @@ function MainPage() {
 
   // shoes 3개씩 가져오기
   const getProduct = async () => {
-    await axios.get(`http://localhost:8000/${type}`).then((result) => {
-      console.log(result.data.slice(lastId, lastId + 4));
-      setProduct([...product, ...result.data.slice(lastId, lastId + 4)]);
-    });
+    await axios
+      .get(`https://hajung-shop-hajung00.koyeb.app/${type}`)
+      .then((result) => {
+        console.log(result.data.slice(lastId, lastId + 4));
+        setProduct([...product, ...result.data.slice(lastId, lastId + 4)]);
+      });
     setLastId(lastId + 4);
     console.log(lastId);
   };

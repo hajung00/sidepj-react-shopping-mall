@@ -14,30 +14,42 @@ const Navlist = ({ scroll }) => {
   let product = [];
   let searchProduct = '';
   const getProduct = async () => {
-    await axios.get(`http://localhost:3000/shoes`).then((result) => {
-      product = [...result.data];
-      console.log(product);
-    });
-    await axios.get(`http://localhost:3000/top`).then((result) => {
-      product = [...product, ...result.data];
-      console.log(product);
-    });
-    await axios.get(`http://localhost:3000/outer`).then((result) => {
-      product = [...product, ...result.data];
-      console.log(product);
-    });
-    await axios.get(`http://localhost:3000/bottom`).then((result) => {
-      product = [...product, ...result.data];
-      console.log(product);
-    });
-    await axios.get(`http://localhost:3000/ops`).then((result) => {
-      product = [...product, ...result.data];
-      console.log(product);
-    });
-    await axios.get(`http://localhost:3000/bag`).then((result) => {
-      product = [...product, ...result.data];
-      console.log(product);
-    });
+    await axios
+      .get(`https://hajung-shop-hajung00.koyeb.app/shoes`)
+      .then((result) => {
+        product = [...result.data];
+        console.log(product);
+      });
+    await axios
+      .get(`https://hajung-shop-hajung00.koyeb.app/top`)
+      .then((result) => {
+        product = [...product, ...result.data];
+        console.log(product);
+      });
+    await axios
+      .get(`https://hajung-shop-hajung00.koyeb.app/outer`)
+      .then((result) => {
+        product = [...product, ...result.data];
+        console.log(product);
+      });
+    await axios
+      .get(`https://hajung-shop-hajung00.koyeb.app/bottom`)
+      .then((result) => {
+        product = [...product, ...result.data];
+        console.log(product);
+      });
+    await axios
+      .get(`https://hajung-shop-hajung00.koyeb.app/ops`)
+      .then((result) => {
+        product = [...product, ...result.data];
+        console.log(product);
+      });
+    await axios
+      .get(`https://hajung-shop-hajung00.koyeb.app/bag`)
+      .then((result) => {
+        product = [...product, ...result.data];
+        console.log(product);
+      });
   };
 
   const onSearch = async () => {
