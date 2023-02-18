@@ -34,12 +34,10 @@ function MainPage() {
 
   // shoes 3개씩 가져오기
   const getProduct = async () => {
-    await axios
-      .get(`https://hajung-shop-hajung00.koyeb.app/${type}`)
-      .then((result) => {
-        console.log(result.data.slice(lastId, lastId + 4));
-        setProduct([...product, ...result.data.slice(lastId, lastId + 4)]);
-      });
+    await axios.get(`http://localhost:3000/${type}`).then((result) => {
+      console.log(result.data.slice(lastId, lastId + 4));
+      setProduct([...product, ...result.data.slice(lastId, lastId + 4)]);
+    });
     setLastId(lastId + 4);
     console.log(lastId);
   };

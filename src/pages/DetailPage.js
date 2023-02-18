@@ -242,7 +242,7 @@ function DetailPage() {
         {detail.map((a, i) => {
           return (
             <div className={'start ' + animation}>
-              {detail[i] != 0 ? <DetailComponent i={i} state={state} /> : null}
+              {detail[i] !== 0 ? <DetailComponent i={i} state={state} /> : null}
             </div>
           );
         })}
