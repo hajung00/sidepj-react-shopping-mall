@@ -22,7 +22,7 @@ const ProductList = ({ product, productId }) => {
   const getProduct = async () => {
     console.log('getProduct');
     await axios
-      .get(`http://localhost:3000/${productId.type}`)
+      .get(`https://hajung-shop.herokuapp.com/${productId.type}`)
       .then((result) => {
         console.log(
           result.data.find(

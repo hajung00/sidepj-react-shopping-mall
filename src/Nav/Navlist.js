@@ -18,23 +18,27 @@ const Navlist = ({ scroll }) => {
       product = [...result.data];
       console.log(product);
     });
-    await axios.get(`http://localhost:3000/top`).then((result) => {
+    await axios.get(`https://hajung-shop.herokuapp.com/top`).then((result) => {
       product = [...product, ...result.data];
       console.log(product);
     });
-    await axios.get(`http://localhost:3000/outer`).then((result) => {
+    await axios
+      .get(`https://hajung-shop.herokuapp.com/outer`)
+      .then((result) => {
+        product = [...product, ...result.data];
+        console.log(product);
+      });
+    await axios
+      .get(`https://hajung-shop.herokuapp.com/bottom`)
+      .then((result) => {
+        product = [...product, ...result.data];
+        console.log(product);
+      });
+    await axios.get(`https://hajung-shop.herokuapp.com/ops`).then((result) => {
       product = [...product, ...result.data];
       console.log(product);
     });
-    await axios.get(`http://localhost:3000/bottom`).then((result) => {
-      product = [...product, ...result.data];
-      console.log(product);
-    });
-    await axios.get(`http://localhost:3000/ops`).then((result) => {
-      product = [...product, ...result.data];
-      console.log(product);
-    });
-    await axios.get(`http://localhost:3000/bag`).then((result) => {
+    await axios.get(`https://hajung-shop.herokuapp.com/bag`).then((result) => {
       product = [...product, ...result.data];
       console.log(product);
     });
