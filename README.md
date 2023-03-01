@@ -1,5 +1,20 @@
 # 📌 Hajung-Shop
 
+<br/> 
+
+## 📑 Table Of Contents
+1.   👋🏻[ Introduce](#-introduce)<br/>
+2.   🚀[ Distribution Link](#-distribution-link)<br/>
+3.   🗓[ Develop Period](#-develop-period)<br/>
+4.   🕶[ Preview](#-preview)<br/>
+5.   ⚙[ Installation](#-installation)<br/>
+6.   🛠[ Technology Stack](#-technology-stack)<br/>
+7.   📝[ Service Logic](#-service-logic)<br/>
+8.   💻[ Function](#-function)<br/>
+
+<br />
+
+
 ## 👋🏻 Introduce
 API 호출 및 비동기 처리 연습을 위해 가짜 API서버를 구축하여  만든 쇼핑몰
 
@@ -10,19 +25,19 @@ API 호출 및 비동기 처리 연습을 위해 가짜 API서버를 구축하�
 
 <br />
 
-## 🗓️ Develop Period
+## 🗓 Develop Period
 2022.12 ~ 2023.02
 
 <br />
 
-## 🕶️ Preview 
+## 🕶 Preview 
 |Desktop View|Tablet View|Mobile View|
 |---|---|---|
 |<img src="https://user-images.githubusercontent.com/66300154/219934733-c2080742-8502-47e0-bf46-3da39b0c8ea7.png" width="350" height="200"/>|<img src="https://user-images.githubusercontent.com/66300154/219934761-84c79bfe-06bd-4e1f-8d15-6e65f5a71f4d.png" width="350" height="300"/>|<img src="https://user-images.githubusercontent.com/66300154/219934798-3b1bf764-f67e-42ae-bb62-4b1111a7be25.png" width="280" height="300"/>|
 
 <br />
 
-## ⚙️ Installation
+## ⚙ Installation
 ```
 $ git clone https://github.com/hajung00/react-shopping-mall.git
 $ npm i
@@ -39,7 +54,7 @@ $ npm run start:dev
 ```      
 <br />
 
-## 🛠️ Technology stack
+## 🛠 Technology stack
 
 <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black">  <img src="https://img.shields.io/badge/node.js-339933?style=for-the-badge&logo=node.js&logoColor=white">  <img src="https://img.shields.io/badge/styled-components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white">    <img src="https://img.shields.io/badge/redux-999999?style=for-the-badge&logo=redux&logoColor=white">  <img src="https://img.shields.io/badge/Axios-5A29E4?style=for-the-badge&logo=Axios&logoColor=white"> 
 
